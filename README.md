@@ -57,25 +57,37 @@ AutoBath/
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js (v16 or higher)
+- Node.js (v18 or higher)
 - npm or yarn
-- Gmail account for email service
+- Git
+- Gmail account for email service (optional)
 
 ### Installation
 
-1. **Clone and navigate to the project:**
+1. **Clone the repository:**
    ```bash
-   cd AutoBath
+   git clone https://github.com/tsy0311/carwash.git
+   cd carwash
    ```
 
-2. **Install all dependencies:**
+2. **Quick Setup (Automated):**
    ```bash
+   # Windows
+   setup.bat
+   
+   # Mac/Linux
+   chmod +x setup.sh
+   ./setup.sh
+   ```
+
+3. **Manual Setup:**
+   ```bash
+   # Install all dependencies
    npm run install-all
+   
+   # Create environment files
+   # See SETUP_OTHER_DEVICE.md for detailed instructions
    ```
-
-3. **Set up email configuration:**
-   - Create a Gmail App Password for `autobath36@gmail.com`
-   - Update the email password in `backend/config.js`
 
 4. **Start the development servers:**
    ```bash
@@ -85,6 +97,13 @@ AutoBath/
 This will start:
 - Backend server on `http://localhost:5000`
 - Frontend development server on `http://localhost:3000`
+
+### 🖥️ Running on Other Devices
+
+For detailed instructions on setting up the project on any device, see:
+- **[SETUP_OTHER_DEVICE.md](SETUP_OTHER_DEVICE.md)** - Complete setup guide
+- **[QUICK_DEPLOY.md](QUICK_DEPLOY.md)** - Quick deployment guide
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Full deployment documentation
 
 ## 📧 Email Setup
 
