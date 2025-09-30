@@ -12,6 +12,12 @@ dist/
 .env.development.local
 .env.test.local
 .env.production.local
+.env.backend
+.env.frontend
+
+# Configuration files with secrets
+config.local.js
+config.production.js
 
 # Logs
 npm-debug.log*
