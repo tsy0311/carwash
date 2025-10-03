@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: autobath-backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: FRONTEND_URL
+        value: https://autobath-frontend-arbl.onrender.com
+      - key: EMAIL_USER
+        value: autobath36@gmail.com
+      - key: EMAIL_PASS
+        value: gxcg aqki wudf hpqc
+      - key: STRIPE_SECRET_KEY
+        value: sk_test_YOUR_STRIPE_SECRET_KEY_HERE
+      - key: STRIPE_WEBHOOK_SECRET
+        value: whsec_YOUR_WEBHOOK_SECRET_HERE
+
+  - type: web
+    name: autobath-frontend
+    env: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./build
+    rootDir: frontend
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://autobath-backend.onrender.com
+      - key: REACT_APP_STRIPE_PUBLISHABLE_KEY
+        value: pk_test_YOUR_STRIPE_PUBLISHABLE_KEY_HERE

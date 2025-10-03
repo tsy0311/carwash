@@ -95,8 +95,8 @@ AutoBath/
    ```
 
 This will start:
-- Backend server on `http://localhost:5000`
-- Frontend development server on `http://localhost:3000`
+- Backend server on `https://autobath-backend.onrender.com`
+- Frontend server on `https://autobath-frontend-arbl.onrender.com`
 
 ### 🖥️ Running on Other Devices
 

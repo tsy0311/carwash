@@ -3,6 +3,12 @@ const config = require('../config');
 
 // Create email transporter
 const createTransporter = () => {
+  // Check if email credentials are available
+  if (!config.EMAIL.USER || !config.EMAIL.PASS) {
+    console.log('⚠️ Email service disabled: No credentials provided');
+    return null;
+  }
+
   // Prefer OAuth2 if enabled and credentials present
   if (
     config.EMAIL.OAUTH?.ENABLED &&
@@ -168,6 +174,12 @@ const templates = {
 const sendEmail = async (emailData) => {
   try {
     const transporter = createTransporter();
+    
+    // Check if email service is disabled
+    if (!transporter) {
+      console.log('⚠️ Email service disabled: Skipping email send');
+      return { messageId: 'disabled', message: 'Email service disabled' };
+    }
     
     // Get template
     const templateKey = emailData.template === 'customer-confirmation' ? 'customerConfirmation' : emailData.template;

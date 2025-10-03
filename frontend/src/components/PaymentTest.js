@@ -26,7 +26,7 @@ const PaymentTest = () => {
     total: 80.00,
     customerInfo: {
       name: 'John Doe',
-      email: 'john@example.com',
+      email: 'test@autobath.com',
       phone: '+60123456789'
     }
   };

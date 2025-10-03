@@ -510,7 +510,7 @@ const Booking = () => {
                     </div>
                     <div className="form-group">
                       <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-                      <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" />
+                      <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="adisonteo33@gmail.com" />
                     </div>
                   </div>
                   
