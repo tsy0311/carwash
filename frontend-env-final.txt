@@ -1,5 +1,0 @@
-# Frontend Environment Variables for Production
-# Copy this to frontend/.env
-
-REACT_APP_API_URL=https://autobath-backend.onrender.com
-REACT_APP_STRIPE_PUBLISHABLE_KEY=pk_test_YOUR_STRIPE_PUBLISHABLE_KEY_HERE
