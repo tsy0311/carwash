@@ -1,4 +1,7 @@
-require('dotenv').config();
+// Load environment variables from .env file if it exists (for local development)
+if (require('fs').existsSync('.env')) {
+  require('dotenv').config();
+}
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -93,15 +96,25 @@ app.use('*', (req, res) => {
 });
 
 // Initialize database and start server
+console.log('🚀 Starting AUTOBATH Backend...');
+console.log('📋 Environment variables check:');
+console.log('- NODE_ENV:', process.env.NODE_ENV || 'not set');
+console.log('- PORT:', process.env.PORT || 'not set');
+console.log('- FRONTEND_URL:', process.env.FRONTEND_URL || 'not set');
+console.log('- EMAIL_USER:', process.env.EMAIL_USER || 'not set');
+
 initDatabase()
   .then(() => {
+    console.log('✅ Database initialized successfully');
     app.listen(PORT, () => {
       console.log(`🚗 AUTOBATH Backend running on port ${PORT}`);
       console.log(`📧 Email service configured for: autobath36@gmail.com`);
       console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
+      console.log(`🔗 Frontend URL: ${process.env.FRONTEND_URL || 'not set'}`);
     });
   })
   .catch((error) => {
-    console.error('Failed to initialize database:', error);
+    console.error('❌ Failed to initialize database:', error);
+    console.error('Stack trace:', error.stack);
     process.exit(1);
   });

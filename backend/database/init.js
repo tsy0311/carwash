@@ -3,6 +3,8 @@ const path = require('path');
 const config = require('../config');
 
 const dbPath = path.resolve(__dirname, '..', config.DB_PATH);
+console.log('📁 Database path:', dbPath);
+console.log('📁 Current directory:', __dirname);
 
 // Create database connection
 const db = new sqlite3.Database(dbPath, (err) => {
